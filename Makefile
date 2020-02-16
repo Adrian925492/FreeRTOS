@@ -39,6 +39,7 @@ C_SOURCES =  \
 MX_CubeGenerated/Src/main.c \
 MX_CubeGenerated/Src/stm32f4xx_it.c \
 MX_CubeGenerated/Src/stm32f4xx_hal_msp.c \
+MX_CubeGenerated/Src/stm32f4xx_hal_timebase_tim.c \
 MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
 MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
 MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
@@ -55,7 +56,11 @@ MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c \
 MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c \
 MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
 MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c \
-MX_CubeGenerated/Src/system_stm32f4xx.c  
+MX_CubeGenerated/Src/system_stm32f4xx.c \
+Framework/FreeRTOSv10.3.0/FreeRTOS/Source/tasks.c \
+Framework/FreeRTOSv10.3.0/FreeRTOS/Source/list.c \
+Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
+Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/MemMang/heap_1.c \
 
 # ASM sources
 ASM_SOURCES =  \
@@ -117,8 +122,10 @@ C_INCLUDES =  \
 -IMX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy \
 -IMX_CubeGenerated/Drivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IMX_CubeGenerated/Drivers/CMSIS/Include \
--IMX_CubeGenerated/Drivers/CMSIS/Include
-
+-IMX_CubeGenerated/Drivers/CMSIS/Include \
+-IFramework/FreeRTOSv10.3.0/FreeRTOS/Source/include \
+-IFramework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/GCC/ARM_CM4F \
+-IFramework/FreeRTOSv10.3.0 \
 
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections

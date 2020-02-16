@@ -11,7 +11,7 @@
             "servertype": "openocd",
             "serverpath": "C:/ProgramowanieToolchain/OpenOCD-20200114-0.10.0/bin/openocd.exe",
             "cwd": "${workspaceRoot}",
-            "executable": "./build/FreeRTOS.elf",
+            "executable": "./Output/FreeRTOS.elf",
             "device": "STM32F411RE",
             "configFiles": [
                 "board/st_nucleo_f4.cfg",
