@@ -61,6 +61,7 @@ Framework/FreeRTOSv10.3.0/FreeRTOS/Source/tasks.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/list.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/MemMang/heap_1.c \
+Source/OS.c \
 
 # ASM sources
 ASM_SOURCES =  \
