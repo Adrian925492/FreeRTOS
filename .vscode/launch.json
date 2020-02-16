@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "name": "Cortex Debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "serverpath": "C:/ProgramowanieToolchain/OpenOCD-20200114-0.10.0/bin/openocd.exe",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/FreeRTOS.elf",
+            "device": "STM32F411RE",
+            "configFiles": [
+                "board/st_nucleo_f4.cfg",
+            ],
+            "svdFile": "C:/ProgramowanieToolchain/ST/Debugger_svdFiles/STM32F4_svd_V1.2/STM32F411.svd"
+        }
+    ]
+}
