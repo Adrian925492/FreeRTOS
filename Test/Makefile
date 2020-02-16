@@ -16,7 +16,7 @@ $(TESTSOURCES_DIR)/gtest_main.cc \
 
 SOURCES = \
 
-NAME = exampleProject_UT
+NAME = FreeRTOS_UT
 
 OUTPUT_DIR = Output\UT
 OBJ_DIR = $(OUTPUT_DIR)\Obj
