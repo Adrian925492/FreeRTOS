@@ -6,7 +6,8 @@ typedef enum LedId_e
     eLed3,
     eLed4,
     eLed5,
-    eLed6
+
+    dLedAmount
 }LedId_t;
 
 void LedsInit(void);

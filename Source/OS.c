@@ -2,6 +2,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "main.h"
+#include "BSP/BSP.h"
 
 #define dBlinkPeriod_ms (1000)
 
@@ -27,7 +28,7 @@ void vBlinkyTask(void* pvParameters)
 
 void os_init(void)
 {
-
+    Bsp_Init();
 }
 
 void os_start(void)
