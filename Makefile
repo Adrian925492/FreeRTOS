@@ -64,6 +64,7 @@ Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/MemMang/heap_1.c \
 Source/OS.c \
 Source/BSP/LEDs/LEDs.c \
 Source/BSP/BSP.c \
+Source/BSP/Communication/Console.c \
 
 # ASM sources
 ASM_SOURCES =  \
