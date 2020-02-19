@@ -16,15 +16,6 @@ void Bsp_Perform()
 {
     for(;;)
     {
-<<<<<<< Updated upstream
-        //LED effect
-        for (uint16_t id = 0; id < (uint16_t)(dLedAmount); ++id)
-        {
-            LedToggle(id);
-            vTaskDelay(500);
-        }
-=======
-        
->>>>>>> Stashed changes
+
     }
 }
