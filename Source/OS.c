@@ -53,7 +53,7 @@ void TaskTesting(void)
     both tasks would have the same priority, the time slicing would be used and task would be
     switched one by one. hanging priority of any of the 2 tasks would cause tkat other task will
     never be reached */
-    xTaskCreate(vBlinkyTask, "BlinkyTask", 32, dBlinkPeriod_ms, 2, NULL);
+    xTaskCreate(vBlinkyTask, "BlinkyTask", 32, (void*)dBlinkPeriod_ms, 2, NULL);
     xTaskCreate(vLedTask1, "LEDtask1", 128, NULL, 2, NULL);
 }
 
