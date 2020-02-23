@@ -12,6 +12,7 @@
 
 
 extern UART_HandleTypeDef huart2;
+
 QueueHandle_t consoleQueue; 
 void vReceiverTask(void* pvParameters);
 void vSenderTask(void* pvParameters);
@@ -52,104 +53,55 @@ void Console_Init()
 
 
 
-
-
-
-
-#ifdef dUseDirectQueue
-
-
-
-void vReceiverTask(void* pvParameters)
-{
-    /* After receiving byte by UART it gives it into queue so the byte could be sent back by sender task */
-    for(;;)
-    {
-        unsigned char data = 0;
-        HAL_UART_Receive(&huart2, &data, 1, 0);
-        if (data != 0)
-        {
-            xQueueSendToBack(consoleQueue, &data, 0);
-        }
-    }
-}
-
-void vSenderTask(void* pvParameters)
-{
-    for(;;)
-    {
-        unsigned char data = 0;
-        xQueueReceive(consoleQueue, &data, portMAX_DELAY);
-        HAL_UART_Transmit(&huart2, &data, 1, 0);
-    }
-}
-#endif
-
-#ifdef dUsePointerQueue
-/*
-CASE2: If we have large amount of data it is good idea to queue pointer to data buffers instead of copying the data
-to queue itself. It would save RAM memory and time resources, beacouse we have no need to copy */
-unsigned char dataBuffer[30];
-
-void Console_Init()
-{
-    unsigned char data[] = "Hello world\n\n\r";
-    HAL_UART_Transmit(&huart2, data, 13, 10);
-
-    consoleQueue = xQueueCreate(1, sizeof(char *));
-
-    xTaskCreate(vSenderTask, "consoleSenderTask", 64, NULL, 3, NULL);
-    xTaskCreate(vReceiverTask, "consoleReceiverTask", 64, NULL, 2, NULL);
-}
-
-void vReceiverTask(void* pvParameters)
-{
-    /* After receiving byte by UART it gives it into queue so the byte could be sent back by sender task */
-    static uint16_t i = 0;
-    unsigned char *pcStringToSend;
-    for(;;)
-    {
-        unsigned char data = 0;
-        HAL_UART_Receive(&huart2, &data, 1, 0);
+// #ifdef dUsePointerQueue
+// void vReceiverTask(void* pvParameters)
+// {
+//     /* After receiving byte by UART it gives it into queue so the byte could be sent back by sender task */
+//     static uint16_t i = 0;
+//     unsigned char *pcStringToSend;
+//     for(;;)
+//     {
+//         unsigned char data = 0;
+//         HAL_UART_Receive(&huart2, &data, 1, 0);
         
-        if (data != 0)
-        {
-            dataBuffer[i] = data;   //Add sign to buffer
-            i++;
+//         if (data != 0)
+//         {
+//             dataBuffer[i] = data;   //Add sign to buffer
+//             i++;
 
-            if (data == 0x0D)  //If enter sign
-            {
-                pcStringToSend = dataBuffer;
-                xQueueSendToBack(consoleQueue, &pcStringToSend, 0);  //Queue pointer to data buffer
-                i = 0;
-            }
-        }
-    }
-}
+//             if (data == 0x0D)  //If enter sign
+//             {
+//                 pcStringToSend = dataBuffer;
+//                 xQueueSendToBack(consoleQueue, &pcStringToSend, 0);  //Queue pointer to data buffer
+//                 i = 0;
+//             }
+//         }
+//     }
+// }
 
-void vSenderTask(void* pvParameters)
-{
-    for(;;)
-    {
-        unsigned char* data = NULL;
-        uint16_t nrOfBytes = 0;
+// void vSenderTask(void* pvParameters)
+// {
+//     for(;;)
+//     {
+//         unsigned char* data = NULL;
+//         uint16_t nrOfBytes = 0;
         
-        xQueueReceive(consoleQueue, &data, portMAX_DELAY);
+//         xQueueReceive(consoleQueue, &data, portMAX_DELAY);
         
-        while(data[nrOfBytes] != 0)
-        {
-            nrOfBytes++;
-        }
+//         while(data[nrOfBytes] != 0)
+//         {
+//             nrOfBytes++;
+//         }
         
-        HAL_UART_Transmit(&huart2, data, nrOfBytes, 10);
+//         HAL_UART_Transmit(&huart2, data, nrOfBytes, 10);
         
-        for(uint16_t i = 0; i < nrOfBytes; i++)     //Empty buffer after sending
-        {
-            data[i] = 0;
-        }
-    }
-}
-#endif
+//         for(uint16_t i = 0; i < nrOfBytes; i++)     //Empty buffer after sending
+//         {
+//             data[i] = 0;
+//         }
+//     }
+// }
+// #endif
 
 #ifdef dUseQueueSet
 /*

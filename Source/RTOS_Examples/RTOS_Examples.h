@@ -6,7 +6,8 @@
 
 #if (queueExample == 1)
 
-#define dTestSimpleQueue      (1)    //Simple queue example with cpoing data into queue, data are copied directly to the queue */
+#define dTestSimpleQueue      (0)    //Simple queue example with cpoing data into queue, data are copied directly to the queue */
+#define dTestPointereQueue    (1)    //Queue with queuing only pointers to data, for larne amount of data queuing (ex. buffers)
 
 #endif
 
@@ -25,5 +26,7 @@ void exampleInit(void);
 #if (dTestSimpleQueue == 1)
 void simpleQueueExampleInit(void);
 #endif
-
+#if (dTestPointereQueue == 1)
+void pointerQueueExampleInit(void);
+#endif
 #endif

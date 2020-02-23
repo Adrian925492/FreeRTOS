@@ -7,7 +7,9 @@ void exampleInit(void)
 #if (dTestSimpleQueue == 1)
 simpleQueueExampleInit();
 #endif
-
+#if (dTestPointereQueue == 1)
+pointerQueueExampleInit();
+#endif
 #endif
 
 
