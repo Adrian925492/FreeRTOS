@@ -70,6 +70,7 @@ Source/RTOS_Examples/RTOS_Examples.c \
 Source/RTOS_Examples/Queues/SimpleQueueExample.c \
 Source/RTOS_Examples/Queues/PointerQueueExample.c \
 Source/RTOS_Examples/Queues/SetQueueExample.c \
+Source/RTOS_Examples/TaskTesting/TaskTesting.c \
 
 # ASM sources
 ASM_SOURCES =  \

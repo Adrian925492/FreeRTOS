@@ -74,8 +74,7 @@ void vReceiverTask(void* pvParameters)
 void vSenderTask(void* pvParameters)
 {
     QueueHandle_t xQueueThatContainsData;
-    char *pcReceivedString;
-
+    
     for(;;)
     {
         unsigned char data = 0;

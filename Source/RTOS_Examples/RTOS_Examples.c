@@ -2,8 +2,11 @@
 
 void exampleInit(void)
 {
-#if (queueExample == 1)
+#if (taskExample == 1)
+TaskTestingInit();
+#endif
 
+#if (queueExample == 1)
 #if (dTestSimpleQueue == 1)
 simpleQueueExampleInit();
 #endif
