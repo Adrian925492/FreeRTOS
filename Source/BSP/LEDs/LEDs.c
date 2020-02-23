@@ -6,9 +6,7 @@ static const uint32_t pins[] = LED_Pin;
 static const GPIO_TypeDef* ports[] = LED_Port;
 
 void LedsInit(void)
-{
-
-  
+{ 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   __HAL_RCC_GPIOA_CLK_ENABLE();

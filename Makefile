@@ -59,11 +59,18 @@ MX_CubeGenerated/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c \
 MX_CubeGenerated/Src/system_stm32f4xx.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/tasks.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/list.c \
+Framework/FreeRTOSv10.3.0/FreeRTOS/Source/queue.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/MemMang/heap_1.c \
 Source/OS.c \
 Source/BSP/LEDs/LEDs.c \
 Source/BSP/BSP.c \
+Source/BSP/Communication/Console.c \
+Source/RTOS_Examples/RTOS_Examples.c \
+Source/RTOS_Examples/Queues/SimpleQueueExample.c \
+Source/RTOS_Examples/Queues/PointerQueueExample.c \
+Source/RTOS_Examples/Queues/SetQueueExample.c \
+Source/RTOS_Examples/TaskTesting/TaskTesting.c \
 
 # ASM sources
 ASM_SOURCES =  \
