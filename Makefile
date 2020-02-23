@@ -66,6 +66,8 @@ Source/OS.c \
 Source/BSP/LEDs/LEDs.c \
 Source/BSP/BSP.c \
 Source/BSP/Communication/Console.c \
+Source/RTOS_Examples/RTOS_Examples.c \
+Source/RTOS_Examples/Queues/SimpleQueueExample.c \
 
 # ASM sources
 ASM_SOURCES =  \

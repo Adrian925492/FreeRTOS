@@ -5,6 +5,8 @@
 #include "BSP/BSP.h"
 #include "BSP/LEDs/LEDs.h"
 
+#include "RTOS_Examples/RTOS_Examples.h"
+
 #define dBlinkPeriod_ms (1000)
 
 void vIdleTask(void *pvParameters);
@@ -43,6 +45,8 @@ void vLedTask1(void* pvParameters)
 void os_init(void)
 {
     Bsp_Init();
+
+    exampleInit();
 }
 
 void TaskTesting(void)

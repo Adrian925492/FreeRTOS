@@ -7,44 +7,58 @@
 
 /* Queue example HERE */
 
-//#define dUseDirectQueue  /* CASE1: data are copied directly to the queue */
 //#define dUsePointerQueue   /* CASE2: only pointers to buffers are queued. See case 2 for more info (below). Good for large amount of data*/
-#define dUseQueueSet       /* CASE3: example of queue set usage. */
+//#define dUseQueueSet       /* CASE3: example of queue set usage. */
 
-/* CASE QUEUE:
-How it works:
-
-We have 2 tasks: sender and receiver. If receiver gets any byte from UART, it keeps it into the queue.
-Sender waits for anything in the queue. As queue is empty, the sender keeps in blocked state. 
-As sender has higher priority than receiver, occuring anything in queue would cause preemption of any other tasks, 
-and sender will immidietly send out the sign back via uart. */
 
 extern UART_HandleTypeDef huart2;
-
 QueueHandle_t consoleQueue; 
-
 void vReceiverTask(void* pvParameters);
 void vSenderTask(void* pvParameters);
 
+static inline uint16_t nrOfChars(unsigned char* pData);
 
-void Console_Perfrom()
+static inline uint16_t nrOfChars(unsigned char* pData)
 {
+    uint16_t nrOfChars = 0;
+    while(pData[nrOfChars] != 0) nrOfChars++;   //Calculate number of characters   
+    return nrOfChars;
 }
 
-#ifdef dUseDirectQueue
-/*
-CASE1: Data are directly copied into a queue
-*/
+
+
+void consoleSend(unsigned char* pData)
+{
+    uint16_t length = nrOfChars(pData);
+    HAL_UART_Transmit(&huart2, pData, length, 10);
+    HAL_UART_Transmit(&huart2, (unsigned char*)("\r\n"), 2, 2);
+}
+
+void consoleSendByte(unsigned char* data)
+{
+    HAL_UART_Transmit(&huart2, data, 1, 0);
+}
+
+void consoleRead(unsigned char* pData, uint16_t length, uint16_t timeout)
+{
+    HAL_UART_Receive(&huart2, pData, length, timeout);
+}
+
 void Console_Init()
 {
-    unsigned char data[] = "Hello world\n\n\r";
-    HAL_UART_Transmit(&huart2, data, 13, 10);
-
-    consoleQueue = xQueueCreate(1, sizeof(char));
-
-    xTaskCreate(vSenderTask, "consoleSenderTask", 64, NULL, 3, NULL);
-    xTaskCreate(vReceiverTask, "consoleReceiverTask", 64, NULL, 2, NULL);
+    unsigned char data[] = "Hello world\r\n\n";
+    HAL_UART_Transmit(&huart2, data, 14, 10);
 }
+
+
+
+
+
+
+
+#ifdef dUseDirectQueue
+
+
 
 void vReceiverTask(void* pvParameters)
 {
