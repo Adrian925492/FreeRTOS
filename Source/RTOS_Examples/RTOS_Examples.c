@@ -10,6 +10,9 @@ simpleQueueExampleInit();
 #if (dTestPointereQueue == 1)
 pointerQueueExampleInit();
 #endif
+#if (dTestQueueSet == 1)
+setQueueExampleInit();
+#endif
 #endif
 
 

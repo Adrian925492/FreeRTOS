@@ -1,21 +1,7 @@
 #include "stm32f4xx_hal.h"
 #include "Console.h"
 
-#include "FreeRTOS.h"
-#include "task.h"
-#include "queue.h"
-
-/* Queue example HERE */
-
-//#define dUsePointerQueue   /* CASE2: only pointers to buffers are queued. See case 2 for more info (below). Good for large amount of data*/
-//#define dUseQueueSet       /* CASE3: example of queue set usage. */
-
-
 extern UART_HandleTypeDef huart2;
-
-QueueHandle_t consoleQueue; 
-void vReceiverTask(void* pvParameters);
-void vSenderTask(void* pvParameters);
 
 static inline uint16_t nrOfChars(unsigned char* pData);
 
@@ -25,8 +11,6 @@ static inline uint16_t nrOfChars(unsigned char* pData)
     while(pData[nrOfChars] != 0) nrOfChars++;   //Calculate number of characters   
     return nrOfChars;
 }
-
-
 
 void consoleSend(unsigned char* pData)
 {
@@ -105,34 +89,10 @@ void Console_Init()
 
 #ifdef dUseQueueSet
 /*
-CASE3: If we have 2 or more queues that has to be serviced by task, and we do not want to use pooling each queue, we can use
-queue set. The set contains defined number of queues (or semaphores) and returns handler for queue or semaphore that had received some 
-data. Each receive causes sending queue handler to ueue set. */
+CASE3: 
 
 unsigned char tickMessage[] = "tick\n";
 
-QueueSetHandle_t set;
-QueueHandle_t tickSendQueue;
-
-void vTickTask(void* pvParameters);
-
-void Console_Init()
-{
-    unsigned char data[] = "Hello world\n\n\r";
-    HAL_UART_Transmit(&huart2, data, 13, 10);
-
-    consoleQueue = xQueueCreate(1, sizeof(char));
-    tickSendQueue = xQueueCreate(1, sizeof(char));
-
-    set = xQueueCreateSet(2);
-
-    xQueueAddToSet(consoleQueue, set);
-    xQueueAddToSet(tickSendQueue, set);
-
-    xTaskCreate(vSenderTask, "T1", 128, NULL, 3, NULL);
-    xTaskCreate(vReceiverTask, "T2", 128, NULL, 2, NULL);
-    xTaskCreate(vTickTask, "tick console task", 128, NULL, 2, NULL);
-}
 
 void vTickTask(void* pvParameters)
 {

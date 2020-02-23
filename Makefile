@@ -69,6 +69,7 @@ Source/BSP/Communication/Console.c \
 Source/RTOS_Examples/RTOS_Examples.c \
 Source/RTOS_Examples/Queues/SimpleQueueExample.c \
 Source/RTOS_Examples/Queues/PointerQueueExample.c \
+Source/RTOS_Examples/Queues/SetQueueExample.c \
 
 # ASM sources
 ASM_SOURCES =  \
