@@ -1,6 +1,5 @@
 #include "FreeRTOS.h"
 #include <task.h>
-#include <queue.h>
 
 #include "../RTOS_Examples.h"
 #include "../../BSP/LEDs/LEDs.h"
@@ -13,6 +12,10 @@
     both tasks would have the same priority, the time slicing would be used and task would be
     switched one by one. hanging priority of any of the 2 tasks would cause tkat other task will
     never be reached */
+
+/*
+Peripherial used: leds: nucleo, 2 ext. leds
+*/
 
 #if (taskExample == 1)
 #define dBlinkPeriod_ms (1000)

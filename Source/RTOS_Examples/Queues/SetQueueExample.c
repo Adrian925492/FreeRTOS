@@ -10,6 +10,10 @@ If we have 2 or more queues that has to be serviced by task, and we do not want 
 queue set. The set contains defined number of queues (or semaphores) and returns handler for queue or semaphore that had received some 
 data. Each receive causes sending queue handler to ueue set. */
 
+/*
+Peripherial used: console 
+*/
+
 #if (dTestQueueSet == 1)
 
 /* Step1: create handler for queues and set*/

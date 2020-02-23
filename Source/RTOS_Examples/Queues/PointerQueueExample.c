@@ -12,6 +12,10 @@ to queue itself. It would save RAM memory and time resources, beacouse we have n
 Only pointers to buffers are queued. See case 2 for more info (below). Good for large amount of data.
 */
 
+/*
+Peripherial used: console 
+*/
+
 #if (dTestPointereQueue == 1)
 
 /* Step1: create handler for queue and data buffer*/

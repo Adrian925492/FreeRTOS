@@ -60,6 +60,7 @@ MX_CubeGenerated/Src/system_stm32f4xx.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/tasks.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/list.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/queue.c \
+Framework/FreeRTOSv10.3.0/FreeRTOS/Source/timers.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/MemMang/heap_1.c \
 Source/OS.c \
@@ -71,6 +72,8 @@ Source/RTOS_Examples/Queues/SimpleQueueExample.c \
 Source/RTOS_Examples/Queues/PointerQueueExample.c \
 Source/RTOS_Examples/Queues/SetQueueExample.c \
 Source/RTOS_Examples/TaskTesting/TaskTesting.c \
+Source/RTOS_Examples/SoftwareTimers/SimpleSoftwareTimers.c \
+Source/RTOS_Examples/SoftwareTimers/SoftwareTimersWithId.c \
 
 # ASM sources
 ASM_SOURCES =  \

@@ -18,5 +18,13 @@ setQueueExampleInit();
 #endif
 #endif
 
+#if (timerExample == 1)
+#if (dTestSimpleTimers == 1)
+softwareTimerExampleInit();
+#endif
+#if (dTestSoftwareTimersId == 1)
+softwareTimerExampleWithIdInit();
+#endif
+#endif
 
 }

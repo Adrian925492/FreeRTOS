@@ -16,6 +16,10 @@ and sender will immidietly send out the sign back via uart.
 Data are directly copied into a queue
 */
 
+/*
+Peripherial used: console 
+*/
+
 #if (dTestSimpleQueue == 1)
 
 /* Step1: create handler for queue */

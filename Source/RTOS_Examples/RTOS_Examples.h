@@ -2,7 +2,7 @@
 
 //CONFIGURATION SECTION
 
-#define queueExample (1)
+#define queueExample (1)           //Examples of queues
 
 #if (queueExample == 1)
 #define dTestSimpleQueue      (0)    //Simple queue example with cpoing data into queue, data are copied directly to the queue */
@@ -11,10 +11,12 @@
 #endif
 
 #define taskExample  (1)            //Examples of how tasks works, time slicint, preemption etc.
-#define timerExample (1)
+#define timerExample (1)            //Examples of software timers
 
-
-
+#if (timerExample == 1)
+#define dTestSimpleTimers     (1)    //Simple software timers test
+#define dTestSoftwareTimersId (1)    //Test software timers with its id usage
+#endif
 
 
 // FREE RTOS EXAMPLES PUBLIC API SECTION
@@ -33,5 +35,14 @@ void pointerQueueExampleInit(void);
 #endif
 #if (dTestQueueSet == 1)
 void setQueueExampleInit(void);
+#endif
+#endif
+
+#if (timerExample == 1)
+#if (dTestSimpleTimers == 1)
+void softwareTimerExampleInit(void);
+#endif
+#if (dTestSoftwareTimersId == 1)
+void softwareTimerExampleWithIdInit(void);
 #endif
 #endif
