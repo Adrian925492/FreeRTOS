@@ -29,6 +29,7 @@
         "rtos_examples.h": "c",
         "main.h": "c",
         "button.h": "c",
-        "console.h": "c"
+        "console.h": "c",
+        "led_config.h": "c"
     }
 }

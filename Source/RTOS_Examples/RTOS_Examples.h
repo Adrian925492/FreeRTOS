@@ -51,4 +51,5 @@ void softwareTimerExampleWithIdInit(void);
 
 #if (dTestBinarySemaphore == 1)
 void binarySemaphoreTestInit(void);
+void timer10Callback(void);
 #endif

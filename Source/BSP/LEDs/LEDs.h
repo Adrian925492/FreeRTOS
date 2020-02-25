@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 typedef enum LedId_e
 {
     eLed0 = 0,
@@ -15,3 +17,4 @@ void LedsInit(void);
 void LedOn(LedId_t ledId);
 void LedOff(LedId_t ledId);
 void LedToggle(LedId_t ledId);
+bool Led_IsOn(LedId_t ledId);

@@ -4,6 +4,7 @@
 
 static const uint32_t pins[] = LED_Pin;
 static const GPIO_TypeDef* ports[] = LED_Port;
+static bool ledState[dLedAmount] = {0,};
 
 void LedsInit(void)
 { 
@@ -25,14 +26,30 @@ void LedsInit(void)
 void LedOn(LedId_t ledId)
 {
     HAL_GPIO_WritePin((GPIO_TypeDef*)ports[ledId], pins[ledId], GPIO_PIN_RESET);
+    ledState[ledId] = true;
 }
 
 void LedOff(LedId_t ledId)
 {
     HAL_GPIO_WritePin((GPIO_TypeDef*)ports[ledId], pins[ledId], GPIO_PIN_SET);
+    ledState[ledId] = false;
 }
 
 void LedToggle(LedId_t ledId)
 {
     HAL_GPIO_TogglePin((GPIO_TypeDef*)ports[ledId], pins[ledId]);
+    if (ledState[ledId] == true)
+    {
+      ledState[ledId] = false;
+    }
+    else
+    {
+      ledState[ledId] = true;
+    }
+    
+}
+
+bool Led_IsOn(LedId_t ledId)
+{
+  return ledState[ledId];
 }
