@@ -58,11 +58,11 @@ void timerCallback(TimerHandle_t timer)
         dutyCount++;
         if (dutyCount == pwmDuty)
         {
-            LedOff(eLed4);
+            LedOff(eLed3);
         }
         else if (dutyCount == dPWM_MaxDuty)
         {
-            LedOn(eLed4);
+            LedOn(eLed3);
             dutyCount = 0;
         }
     }

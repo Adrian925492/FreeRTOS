@@ -26,6 +26,9 @@
         "array": "c",
         "string": "c",
         "string_view": "c",
-        "rtos_examples.h": "c"
+        "rtos_examples.h": "c",
+        "main.h": "c",
+        "button.h": "c",
+        "console.h": "c"
     }
 }

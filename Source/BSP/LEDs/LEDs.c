@@ -24,12 +24,12 @@ void LedsInit(void)
 
 void LedOn(LedId_t ledId)
 {
-    HAL_GPIO_WritePin((GPIO_TypeDef*)ports[ledId], pins[ledId], GPIO_PIN_SET);
+    HAL_GPIO_WritePin((GPIO_TypeDef*)ports[ledId], pins[ledId], GPIO_PIN_RESET);
 }
 
 void LedOff(LedId_t ledId)
 {
-    HAL_GPIO_WritePin((GPIO_TypeDef*)ports[ledId], pins[ledId], GPIO_PIN_RESET);
+    HAL_GPIO_WritePin((GPIO_TypeDef*)ports[ledId], pins[ledId], GPIO_PIN_SET);
 }
 
 void LedToggle(LedId_t ledId)

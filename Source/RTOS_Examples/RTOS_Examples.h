@@ -18,6 +18,8 @@
 #define dTestSoftwareTimersId (1)    //Test software timers with its id usage
 #endif
 
+#define dTestBinarySemaphore  (1)    //Binary semaphores testing
+
 
 // FREE RTOS EXAMPLES PUBLIC API SECTION
 void exampleInit(void);
@@ -45,4 +47,8 @@ void softwareTimerExampleInit(void);
 #if (dTestSoftwareTimersId == 1)
 void softwareTimerExampleWithIdInit(void);
 #endif
+#endif
+
+#if (dTestBinarySemaphore == 1)
+void binarySemaphoreTestInit(void);
 #endif

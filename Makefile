@@ -67,6 +67,7 @@ Source/OS.c \
 Source/BSP/LEDs/LEDs.c \
 Source/BSP/BSP.c \
 Source/BSP/Communication/Console.c \
+Source/BSP/Button/Button.c \
 Source/RTOS_Examples/RTOS_Examples.c \
 Source/RTOS_Examples/Queues/SimpleQueueExample.c \
 Source/RTOS_Examples/Queues/PointerQueueExample.c \
@@ -74,6 +75,7 @@ Source/RTOS_Examples/Queues/SetQueueExample.c \
 Source/RTOS_Examples/TaskTesting/TaskTesting.c \
 Source/RTOS_Examples/SoftwareTimers/SimpleSoftwareTimers.c \
 Source/RTOS_Examples/SoftwareTimers/SoftwareTimersWithId.c \
+Source/RTOS_Examples/BinarySemaphores/BinarySemaphore.c \
 
 # ASM sources
 ASM_SOURCES =  \

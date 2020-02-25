@@ -27,4 +27,8 @@ softwareTimerExampleWithIdInit();
 #endif
 #endif
 
+#if (dTestBinarySemaphore == 1)
+binarySemaphoreTestInit();
+#endif
+
 }
