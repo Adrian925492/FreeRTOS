@@ -30,7 +30,7 @@ SemaphoreHandle_t semaphore;
 void vLedChangeStateTask(void* pvParameters);
 
 /* Step3: create button checking state task*/
-void vButtonCheckStateTask(void* pvParameters);
+void vButtonCheckTask(void* pvParameters);
 
 /* Step4: create timer interrupt*/
 
@@ -52,7 +52,7 @@ void binarySemaphoreTestInit(void)
     xTaskCreate(vLedChangeStateTask, "BS_T1", 64, NULL, 3, NULL);
 
     /* Create button state task */
-    xTaskCreate(vButtonCheckStateTask, "BS_T2", 64, NULL, 2, NULL);
+    xTaskCreate(vButtonCheckTask, "BS_T2", 64, NULL, 2, NULL);
 }
 
 void vLedChangeStateTask(void* pvParameters)
@@ -65,7 +65,7 @@ void vLedChangeStateTask(void* pvParameters)
     }
 }
 
-void vButtonCheckStateTask(void* pvParameters)
+void vButtonCheckTask(void* pvParameters)
 {
     for (;;)
     {

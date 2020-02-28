@@ -19,7 +19,7 @@
 #endif
 
 #define dTestBinarySemaphore  (1)    //Binary semaphores testing
-
+#define dTestCountingSemaphore (1)   //Counting semaphore testing
 
 // FREE RTOS EXAMPLES PUBLIC API SECTION
 void exampleInit(void);
@@ -51,5 +51,10 @@ void softwareTimerExampleWithIdInit(void);
 
 #if (dTestBinarySemaphore == 1)
 void binarySemaphoreTestInit(void);
+void timer10Callback(void);
+#endif
+
+#if (dTestCountingSemaphore == 1)
+void countingSemaphoreTestInit(void);
 void timer10Callback(void);
 #endif

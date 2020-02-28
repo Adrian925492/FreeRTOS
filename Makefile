@@ -76,6 +76,8 @@ Source/RTOS_Examples/TaskTesting/TaskTesting.c \
 Source/RTOS_Examples/SoftwareTimers/SimpleSoftwareTimers.c \
 Source/RTOS_Examples/SoftwareTimers/SoftwareTimersWithId.c \
 Source/RTOS_Examples/BinarySemaphores/BinarySemaphore.c \
+Source/RTOS_Examples/CountingSemaphores/CountingSemaphore.c \
+
 
 # ASM sources
 ASM_SOURCES =  \
