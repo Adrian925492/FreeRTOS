@@ -21,7 +21,8 @@
 #define dTestBinarySemaphore  (1)    //Binary semaphores testing
 #define dTestCountingSemaphore (1)   //Counting semaphore testing
 
-#define dTestSimpleMutex      (1)    //Simple mutex testing
+#define dTestSimpleMutex      (0)    //Simple mutex testing
+#define dUseGatekeeperTask    (1)    //Gatekeeper task usage example
 
 // FREE RTOS EXAMPLES PUBLIC API SECTION
 void exampleInit(void);
@@ -63,4 +64,8 @@ void timer10Callback(void);
 
 #if (dTestSimpleMutex == 1)
 void simpleMutexTestInit(void);
+#endif
+
+#if (dUseGatekeeperTask == 1)
+void gatekeeperTaskExampleInit(void);
 #endif

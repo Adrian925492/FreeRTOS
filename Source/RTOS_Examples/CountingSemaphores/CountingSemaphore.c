@@ -32,7 +32,9 @@ void vButtonCheckStateTask(void* pvParameters);
 /* Step 4: initialize function */
 void countingSemaphoreTestInit(void)
 {
+    vTaskSuspendAll();
     consoleSend((unsigned char*)"Counting semaphore example! ");    
+    xTaskResumeAll();  //Suspend and resume scheduler - to not allow to preempt writing by other task!
 
     /* Create binary semaphore */
     semaphore = xSemaphoreCreateCounting(10, 0);

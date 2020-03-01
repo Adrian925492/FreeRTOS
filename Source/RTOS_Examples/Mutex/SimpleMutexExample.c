@@ -26,7 +26,9 @@ void vTickTask(void* pvParameters);
 /* Step 3: initfunction call */
 void simpleMutexTestInit(void)
 {
+    vTaskSuspendAll();
     consoleSend((unsigned char*)"Siple mutex example! ");
+    xTaskResumeAll();  //Suspend and resume scheduler - to not allow to preempt writing by other task!
 
     /* Create mutex */
     mutex = xSemaphoreCreateMutex();

@@ -33,6 +33,7 @@ void vSenderTask(void* pvParameters);
 void simpleQueueExampleInit(void)
 {
     consoleSend((unsigned char*)"Simple queue example! ");
+    xTaskResumeAll();  //Suspend and resume scheduler - to not allow to preempt writing by other task!
 
     /* Create queue */
     queue = xQueueCreate(1, sizeof(char));

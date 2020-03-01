@@ -29,7 +29,9 @@ void vTickTask(void* pvParameters);
 /* Step 3: call example init function */
 void setQueueExampleInit(void)
 {
+    vTaskSuspendAll();
     consoleSend((unsigned char*)"Set queue example! ");
+    xTaskResumeAll();  //Suspend and resume scheduler - to not allow to preempt writing by other task!
 
     /* Create sender - receiver queue */
     consoleQueue = xQueueCreate(1, sizeof(char));

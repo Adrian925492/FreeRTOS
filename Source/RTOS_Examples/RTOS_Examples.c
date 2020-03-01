@@ -39,4 +39,9 @@ countingSemaphoreTestInit();
 simpleMutexTestInit();
 #endif
 
+#if (dUseGatekeeperTask == 1)
+gatekeeperTaskExampleInit();
+#endif
+
+
 }

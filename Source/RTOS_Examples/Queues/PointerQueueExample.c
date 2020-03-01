@@ -40,7 +40,9 @@ static inline void clearBuffer(unsigned char* pBuffer)
 /* Step 4: call example init function */
 void pointerQueueExampleInit(void)
 {
+    vTaskSuspendAll();
     consoleSend((unsigned char*)"Pointer queue example! ");
+    xTaskResumeAll();  //Suspend and resume scheduler - to not allow to preempt writing by other task!
 
     /* Create queue */
     queue = xQueueCreate(1, sizeof(char));
