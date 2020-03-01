@@ -77,6 +77,7 @@ Source/RTOS_Examples/SoftwareTimers/SimpleSoftwareTimers.c \
 Source/RTOS_Examples/SoftwareTimers/SoftwareTimersWithId.c \
 Source/RTOS_Examples/BinarySemaphores/BinarySemaphore.c \
 Source/RTOS_Examples/CountingSemaphores/CountingSemaphore.c \
+Source/RTOS_Examples/Mutex/SimpleMutexExample.c \
 
 
 # ASM sources

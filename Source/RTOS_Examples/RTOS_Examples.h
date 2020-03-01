@@ -7,7 +7,7 @@
 #if (queueExample == 1)
 #define dTestSimpleQueue      (0)    //Simple queue example with cpoing data into queue, data are copied directly to the queue */
 #define dTestPointereQueue    (0)    //Queue with queuing only pointers to data, for larne amount of data queuing (ex. buffers)
-#define dTestQueueSet         (1)    // example of queue set usage
+#define dTestQueueSet         (0)    // example of queue set usage
 #endif
 
 #define taskExample  (1)            //Examples of how tasks works, time slicint, preemption etc.
@@ -20,6 +20,8 @@
 
 #define dTestBinarySemaphore  (1)    //Binary semaphores testing
 #define dTestCountingSemaphore (1)   //Counting semaphore testing
+
+#define dTestSimpleMutex      (1)    //Simple mutex testing
 
 // FREE RTOS EXAMPLES PUBLIC API SECTION
 void exampleInit(void);
@@ -57,4 +59,8 @@ void timer10Callback(void);
 #if (dTestCountingSemaphore == 1)
 void countingSemaphoreTestInit(void);
 void timer10Callback(void);
+#endif
+
+#if (dTestSimpleMutex == 1)
+void simpleMutexTestInit(void);
 #endif

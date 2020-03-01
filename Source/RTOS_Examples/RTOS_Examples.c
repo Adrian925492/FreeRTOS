@@ -35,4 +35,8 @@ binarySemaphoreTestInit();
 countingSemaphoreTestInit();
 #endif
 
+#if (dTestSimpleMutex == 1)
+simpleMutexTestInit();
+#endif
+
 }
