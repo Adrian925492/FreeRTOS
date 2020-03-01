@@ -43,5 +43,8 @@ simpleMutexTestInit();
 gatekeeperTaskExampleInit();
 #endif
 
+#if (dTestEventGroups == 1)
+eventGroupsExampleTest();
+#endif
 
 }

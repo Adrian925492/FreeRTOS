@@ -30,6 +30,7 @@
         "main.h": "c",
         "button.h": "c",
         "console.h": "c",
-        "led_config.h": "c"
+        "led_config.h": "c",
+        "leds.h": "c"
     }
 }

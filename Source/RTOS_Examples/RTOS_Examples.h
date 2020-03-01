@@ -18,11 +18,13 @@
 #define dTestSoftwareTimersId (1)    //Test software timers with its id usage
 #endif
 
-#define dTestBinarySemaphore  (1)    //Binary semaphores testing
-#define dTestCountingSemaphore (1)   //Counting semaphore testing
+#define dTestBinarySemaphore  (0)    //Binary semaphores testing
+#define dTestCountingSemaphore (0)   //Counting semaphore testing
 
 #define dTestSimpleMutex      (0)    //Simple mutex testing
 #define dUseGatekeeperTask    (1)    //Gatekeeper task usage example
+
+#define dTestEventGroups      (1)    //Event groups example
 
 // FREE RTOS EXAMPLES PUBLIC API SECTION
 void exampleInit(void);
@@ -68,4 +70,9 @@ void simpleMutexTestInit(void);
 
 #if (dUseGatekeeperTask == 1)
 void gatekeeperTaskExampleInit(void);
+#endif
+
+#if (dTestEventGroups == 1)
+void eventGroupsExampleTest(void);
+void timer10Callback(void);
 #endif

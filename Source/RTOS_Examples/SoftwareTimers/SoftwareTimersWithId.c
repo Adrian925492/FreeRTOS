@@ -33,7 +33,9 @@ void timerCallback(TimerHandle_t timer);
 /*Step3: initialize function*/
 void softwareTimerExampleWithIdInit(void)
 {
+    vTaskSuspendAll();
     consoleSend((unsigned char*)"ID software timer example! ");
+    xTaskResumeAll();
 
     /* Create timers */
     dimmingTimer = xTimerCreate("tim1", pdMS_TO_TICKS(100), pdTRUE, (void*)eDimmingTimer, timerCallback);

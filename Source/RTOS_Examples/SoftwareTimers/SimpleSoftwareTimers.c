@@ -26,7 +26,9 @@ void timerLedCallback(TimerHandle_t timer);
 /*Step3: initialize function*/
 void softwareTimerExampleInit(void)
 {
+    vTaskSuspendAll();
     consoleSend((unsigned char*)"Simple software timer example! ");
+    xTaskResumeAll();
 
     /* Create timer */
     timer = xTimerCreate("tim1", pdMS_TO_TICKS(500), pdTRUE, 0, timerLedCallback);
