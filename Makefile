@@ -61,6 +61,7 @@ Framework/FreeRTOSv10.3.0/FreeRTOS/Source/tasks.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/list.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/queue.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/timers.c \
+Framework/FreeRTOSv10.3.0/FreeRTOS/Source/event_groups.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 Framework/FreeRTOSv10.3.0/FreeRTOS/Source/portable/MemMang/heap_1.c \
 Source/OS.c \
@@ -79,6 +80,7 @@ Source/RTOS_Examples/BinarySemaphores/BinarySemaphore.c \
 Source/RTOS_Examples/CountingSemaphores/CountingSemaphore.c \
 Source/RTOS_Examples/Mutex/SimpleMutexExample.c \
 Source/RTOS_Examples/GatekeeperTaskExample/GatekeeperTaskExample.c \
+Source/RTOS_Examples/EventGroups/EventGroupTest.c \
 
 
 # ASM sources
