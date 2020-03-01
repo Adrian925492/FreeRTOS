@@ -37,6 +37,8 @@ void softwareTimerExampleInit(void)
 
 void timerLedCallback(TimerHandle_t timer)
 {
+    taskENTER_CRITICAL();
     LedToggle(eLed2);
+    taskEXIT_CRITICAL();        //Pre emption avoided by entering interrupt service routine in critical section
 }
 #endif
