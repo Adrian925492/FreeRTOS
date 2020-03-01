@@ -26,6 +26,8 @@
 
 #define dTestEventGroups      (1)    //Event groups example
 
+#define dTestTaskNotifications (1)   //Task notification usage example
+
 // FREE RTOS EXAMPLES PUBLIC API SECTION
 void exampleInit(void);
 
@@ -75,4 +77,8 @@ void gatekeeperTaskExampleInit(void);
 #if (dTestEventGroups == 1)
 void eventGroupsExampleTest(void);
 void timer10Callback(void);
+#endif
+
+#if (dTestTaskNotifications == 1)
+void taskNotificationsInit(void);
 #endif

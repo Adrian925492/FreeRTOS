@@ -81,6 +81,7 @@ Source/RTOS_Examples/CountingSemaphores/CountingSemaphore.c \
 Source/RTOS_Examples/Mutex/SimpleMutexExample.c \
 Source/RTOS_Examples/GatekeeperTaskExample/GatekeeperTaskExample.c \
 Source/RTOS_Examples/EventGroups/EventGroupTest.c \
+Source/RTOS_Examples/TaskNotification/TaskNotification.c \
 
 
 # ASM sources

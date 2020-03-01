@@ -47,4 +47,8 @@ gatekeeperTaskExampleInit();
 eventGroupsExampleTest();
 #endif
 
+#if (dTestTaskNotifications == 1)
+taskNotificationsInit();
+#endif
+
 }
