@@ -82,6 +82,7 @@ Source/RTOS_Examples/Mutex/SimpleMutexExample.c \
 Source/RTOS_Examples/GatekeeperTaskExample/GatekeeperTaskExample.c \
 Source/RTOS_Examples/EventGroups/EventGroupTest.c \
 Source/RTOS_Examples/TaskNotification/TaskNotification.c \
+Source/RTOS_Examples/TaskStatistic/TaskStatistic.c \
 
 
 # ASM sources
